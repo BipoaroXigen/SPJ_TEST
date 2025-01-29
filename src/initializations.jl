@@ -1,4 +1,4 @@
-function binary_initialization(dims::Int, size::Int, f::Function)<:Population
+function binary_initialization(dims::Int, size::Int, f::Function)#<:Population
     population = Vector{BinaryChromosome}()
     for i in 1:size
         values = rand(0:1, dims)
@@ -23,7 +23,7 @@ function interval_real_initialization(dims::Int, size::Int, f::Function, lb::T, 
 end
 
 """Dimensions, pop size"""
-function TSP_initialization(dims::Int, size::Int, f::Function)<:Population
+function TSP_initialization(dims::Int, size::Int, f::Function)#<:Population
     population = Vector{RealChromosome}()
     for i in 1:size
         indexes = shuffle(collect(1:dims))
@@ -33,7 +33,7 @@ function TSP_initialization(dims::Int, size::Int, f::Function)<:Population
     return Population(population, fitness, size)
 end
 
-function TSP_NN_initialization(dims::Int, size::Int, f::Function, G::Matrix{Float64})<:Population
+function TSP_NN_initialization(dims::Int, size::Int, f::Function, G::Matrix{Float64})#<:Population
     population = Vector{RealChromosome}()
     for i in 1:size
         free = Bool.(ones(dims))
@@ -59,7 +59,7 @@ function TSP_NN_initialization(dims::Int, size::Int, f::Function, G::Matrix{Floa
     return Population(population, fitness, size)
 end
 
-function copy_initialization(dims::Int, size::Int, f::Function, seed::Vector{<:Real})<:Population
+function copy_initialization(dims::Int, size::Int, f::Function, seed::Vector{<:Real})#<:Population
     population = Vector{RealChromosome}()
     for i in 1:size
         push!(population, get_real_chromosome(copy(seed)))
@@ -144,10 +144,10 @@ function random_expression_grow(basis_functions::Vector{Function}, basis_variabl
     end
 end
 
-function square(x)
+#= function square(x)
     return x^2
 end
 function cube(x)
     return x^3
 end
-logaritmus(x) = log(abs(x))
+logaritmus(x) = log(abs(x)) =#
