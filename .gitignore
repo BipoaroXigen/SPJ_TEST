@@ -1,0 +1,12 @@
+/Manifest.toml
+/ALL_tsp/*
+/tsp_problems/*
+/benchmarks/*
+/trading_data/*
+*/evaluations/*
+*/images/*
+
+*.png
+*.jpg
+*.pdf
+*.svg
