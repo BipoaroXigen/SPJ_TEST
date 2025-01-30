@@ -27,9 +27,9 @@ initialization      = enclose_noargs(binary_initialization, 10, pop_size, object
 selection           = enclose_arguments(EO.s_tournament, pop_size, 3)
 crossover           = enclose_arguments(EO.cr_single_point, pop_size)
 mutation            = enclose_arguments(basic_preturbation!, 0.25)
-replacement         = EO.enclose_replacement(EO.r_keep_best_n_stoch, pop_size, constraints, 0.4)
+replacement         = EO.enclose_replacement(EO.r_keep_best_n, pop_size)
 termination         = enclose_argument(iteration_termination, pop_size*100)
-solution = solvink_hart(objective_function, initialization, selection, crossover, mutation, replacement, termination; constraints=constraints)
+solution = solvink_hart(objective_function, initialization, selection, crossover, mutation, replacement, termination)
 
 @testset "LS" begin
     
