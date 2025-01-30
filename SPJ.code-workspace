@@ -1,8 +1,7 @@
 {
-	"folders": [
-		{
-			"path": "../SPJ"
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "path": "."
+        }
+    ]
 }
