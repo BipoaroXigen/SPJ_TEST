@@ -22,8 +22,8 @@ end
 
 dims = 10
 pop_size = 100
-objective_function  = f_onemax
-initialization      = enclose_noargs(binary_initialization, 10, pop_size, objective_function)
+objective_function  = enclose_arguments(f_sphere, zeros(dims))  # min at origin
+initialization      = enclose_noargs(interval_real_initialization, 10, pop_size, objective_function, 0, 100)
 selection           = enclose_arguments(EO.s_tournament, pop_size, 3)
 crossover           = enclose_arguments(EO.cr_single_point, pop_size)
 mutation            = enclose_arguments(basic_preturbation!, 0.25)
