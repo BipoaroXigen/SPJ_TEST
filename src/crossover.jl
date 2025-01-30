@@ -58,6 +58,7 @@ end
 
 function cr_ordered(p::Population)::Population
     p.population = [cr_ordered(p.population[i], p.population[i+1]) for i in 1:p.size-1]
+    push!(p.population, cr_ordered(p.population[1], p.population[end]))
     return p
 end
 
@@ -96,7 +97,8 @@ function cr_subtour(p::Population)::Population
     for i in 1:p.size-1
         append!(g, cr_subtour(p.population[i], p.population[i+1]))
     end
-    p.population = g
+    append!(g, cr_subtour(p.population[1], p.population[end]))
+    p.population = g[1:p.size]
     return p
 end
 
@@ -190,6 +192,7 @@ end
 
 function cr_edge_recombination(p::Population)::Population
     p.population = [cr_edge_recombination(p.population[i], p.population[i+1]) for i in 1:p.size-1]
+    push!(p.population, cr_edge_recombination(p.population[1], p.population[end]))
     return p
 end
 

@@ -36,5 +36,3 @@ module EO
     export Chromosome, BinaryChromosome, RealChromosome, Constraint
 
 end # module EO
-
-println("compiled")

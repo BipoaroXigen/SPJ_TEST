@@ -42,7 +42,7 @@ end
 
 function r_keep_best_n(old::Population, new::Population, n::Int)::Population
     p = EO.r_merge(old, new)
-    order = sortperm(p.fitness+p.penalty)
+    order = sortperm(p.fitness.+p.penalty)
     p.population = p.population[order][1:n]
     p.fitness = p.fitness[order][1:n]
     p.penalty = p.penalty[order][1:n]
