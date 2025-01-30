@@ -4,6 +4,7 @@
 /trading_data/*
 */evaluations/*
 */images/*
+.vscode
 
 *.png
 *.jpg
