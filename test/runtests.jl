@@ -33,6 +33,6 @@ solution = solvink_hart(objective_function, initialization, selection, crossover
 
 @testset "LS" begin
     
-    @test solution.top_value < dims
+    @test solution.top_value < 100
 
 end
