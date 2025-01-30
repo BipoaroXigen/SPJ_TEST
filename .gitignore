@@ -1,4 +1,5 @@
-Manifest.toml
+/Manifest.toml
+/docs/Manifest.toml
 /TSP_problems/*
 #/benchmarks/*
 /trading_data/*
