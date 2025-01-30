@@ -14,6 +14,10 @@ or `]add https://github.com/BipoaroXigen/SPJ_TEST` in REPL.
 We provide several jupyter notebooks which help the user see how the library can be utilized.
 The notebooks can be found in the directory `notebooks`.
 
+### Showcase of basic optimalization problems solvers
+
+The notebook `zoo.ipynb` demonstrates the how the EO library can be used to solve variou types of optimization problems, such as optimization of simple function, multiobjective function, or symbolic regression by Genetic Programing.
+
 ### Solving the TSP problem
 
 The notebook `TSP.ipynb` demonstrates the use and performance of the library when applied to the TSP problem.
