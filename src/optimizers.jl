@@ -192,6 +192,8 @@ function solvink_hart(objective_function::Function, initialization::Function, se
 
         iteration += 1*population.size
     end
+
+    println(top_f)
     #return Result_benchmark(f_history, p_history)
     return Result_big(top_x.sequence, top_f, x_history, f_history, pophist, p_history)
 end
