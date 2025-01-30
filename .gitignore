@@ -1,9 +1,8 @@
 Manifest.toml
 /TSP_problems/*
-/benchmarks/*
+#/benchmarks/*
 /trading_data/*
-*/evaluations/*
-*/images/*
+#*/evaluations/*
 .vscode
 
 *.png
