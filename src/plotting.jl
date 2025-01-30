@@ -1,4 +1,4 @@
-function plot_results(res::T) where T<:Result
+function plot_results(res::T, ::String) where T<:Result
     p = Plots.plot(layout=(2,1), legend=false)
     Plots.plot!(p, res.value_history, subplot=1, title="Objective")
     x = map(x->x[2][1], enumerate(res.coords_history))

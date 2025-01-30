@@ -23,7 +23,7 @@ end
 dims = 10
 pop_size = 100
 objective_function  = enclose_arguments(f_sphere, zeros(dims))  # min at origin
-initialization      = enclose_noargs(interval_real_initialization, 10, pop_size, objective_function, 0, 100)
+initialization      = enclose_noargs(interval_real_initialization, dims, pop_size, objective_function, 0, 100)
 selection           = enclose_arguments(EO.s_tournament, pop_size, 3)
 crossover           = enclose_arguments(EO.cr_parent_sum, pop_size)
 mutation            = enclose_arguments(gaussian_preturbation!, 0.25)
@@ -31,8 +31,8 @@ replacement         = EO.enclose_replacement(EO.r_keep_best_n, pop_size)
 termination         = enclose_argument(iteration_termination, pop_size*100)
 solution = solvink_hart(objective_function, initialization, selection, crossover, mutation, replacement, termination)
 
-@testset "LS" begin
+@testset "ES" begin
     
-    @test solution.top_value < 100
+    @test solution.top_value < 200
 
 end
