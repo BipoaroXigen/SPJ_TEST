@@ -3,6 +3,16 @@ using Test
 
 f = x->0
 
+#= objective_function  = f_onemax
+initialization      = enclose_noargs(binary_initialization, 2, 100, objective_function)
+selection           = enclose_arguments(EO.s_tournament, 100, 3)
+crossover           = enclose_arguments(EO.cr_parent_sum, pop_size)
+mutation            = enclose_arguments(gaussian_preturbation!, 0.25)
+replacement         = EO.enclose_replacement(EO.r_keep_best_n_stoch, pop_size, constraints, 0.4)
+termination         = enclose_argument(iteration_termination, pop_size*100)
+
+solution = solvink_hart(objective_function, initialization, selection, crossover, mutation, replacement, termination; constraints=constraints) =#
+
 @testset "EO.jl" begin
     # Write your tests here.
     @test 1 == 1
