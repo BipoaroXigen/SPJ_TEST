@@ -94,11 +94,10 @@ end
 """1:1 size of input and output population"""
 function cr_subtour(p::Population)::Population
     g = []
-    for i in 1:p.size-1
+    for i in 1:round(Int, p.size/2)
         append!(g, cr_subtour(p.population[i], p.population[i+1]))
     end
-    append!(g, cr_subtour(p.population[1], p.population[end]))
-    p.population = g[1:p.size]
+    #p.population = g[1:p.size]
     return p
 end
 
