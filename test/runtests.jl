@@ -13,7 +13,8 @@ termination         = enclose_argument(iteration_termination, pop_size*100)
 
 solution = solvink_hart(objective_function, initialization, selection, crossover, mutation, replacement, termination; constraints=constraints) =#
 
-@testset "EO.jl" begin
+#@testset "EO.jl" begin
+@testset "basics" begin
     # Write your tests here.
     @test 1 == 1
 
