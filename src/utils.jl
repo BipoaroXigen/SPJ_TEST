@@ -51,7 +51,7 @@ Returns vector of indices of non-dominated solutions
 
 WRITTEN BY AI. It wrote functional code on first try
 """
-function get_domination_count(scores::Vector{Vector{Float64}})
+function get_domination_count(scores::Vector{Vector{<:Real}})
     n = length(scores)
     domination_count = zeros(Int, n)
     
@@ -83,7 +83,7 @@ IEEE transactions on evolutionary computation 6.2 (2002): 182-197.
 
 Again written by AI, I was curious how well it works. It messed up indexing, but that aside it wrote a working function...
 """
-function crowding_distance(fitness::Vector{Vector{Float64}})::Vector{Float64}
+function crowding_distance(fitness::Vector{Vector{<:Real}})::Vector{Float64}
     n = length(fitness)  # Number of solutions
     if n < 3
         return fill(Inf, n) # Edge case - assign infinite distance if too few solutions
@@ -137,7 +137,7 @@ function parse_TSP_problem(file_path::String)#::Matrix{Float64}, Vector{Vector{F
 			line = readline(f)
 			if occursin("DIMENSION", line)
 				d = parse(Int64, split(line)[end])
-				global G = zeros(d, d)
+				global Gr = zeros(d, d)
 			end
 			if occursin("NODE_COORD_SECTION", line)
 				edging = true
@@ -157,12 +157,12 @@ function parse_TSP_problem(file_path::String)#::Matrix{Float64}, Vector{Vector{F
 	# get all distances
 	for i in 1:length(vertices)
 		for j in 1:length(vertices)
-			G[i, j] = sqrt(sum((vertices[i]-vertices[j]).^2))
-			G[j, i] = G[i, j]
+			Gr[i, j] = sqrt(sum((vertices[i]-vertices[j]).^2))
+			Gr[j, i] = Gr[i, j]
 		end
 	end
 	
-	return G, vertices
+	return Gr, vertices
 end
 
 function benchmark(objective_function::Function, initialization::Function, selection::Function, crossover::Function, mutation::Function, replacement::Function, termination::Function, K::Int, prefix::String)

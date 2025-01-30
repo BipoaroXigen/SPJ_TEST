@@ -352,7 +352,7 @@ function cr_GSGP(a::ExprChromosome, b::ExprChromosome, basis_functions::Vector{F
 #=     new_c = :(($+)($(new_a.sequence), $(new_b.sequence)))
     new_c = :(($*)(0.5, $(new_c))) =#
 
-    new_c = :(($mean)($(new_a.sequence), $(new_b.sequence)))
+    new_c = :(($mmean)($(new_a.sequence), $(new_b.sequence)))
 
     return get_expr_chromosome(new_c)
 end
@@ -371,4 +371,4 @@ function cr_GSGP(p::Population, out_n::Int, basis_functions::Vector{Function}, b
     return p
 end
 
-mean(x, y) = 0.5*(x+y)
+mmean(x, y) = 0.5*(x+y)

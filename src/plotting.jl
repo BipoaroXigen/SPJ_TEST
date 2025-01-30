@@ -1,42 +1,43 @@
 function plot_results(res::T) where T<:Result
-    p = plot(layout=(2,1), legend=false)
-    plot!(p, res.value_history, subplot=1, title="Objective")
+    p = Plots.plot(layout=(2,1), legend=false)
+    Plots.plot!(p, res.value_history, subplot=1, title="Objective")
     x = map(x->x[2][1], enumerate(res.coords_history))
     y = map(x->x[2][2], enumerate(res.coords_history))
-    plot!(p, x, y, subplot=2, title="Coordinates")
+    Plots.plot!(p, x, y, subplot=2, title="Coordinates")
 end
 
 function plot_results(res::T, v::Vector{Vector{Float64}}) where T<:Result
 
-    p = plot(layout=(1,3), legend=false)
+    p = Plots.plot(layout=(1,3), legend=false)
 
     order = res.coords_history[1]
     x = map(x->x[2][1], enumerate(v[order]))
     y = map(x->x[2][2], enumerate(v[order]))
 
-    plot!(p, x, y, lc = :buda, subplot=1, title="initialization")
+    Plots.plot!(p, x, y, lc = :buda, subplot=1, title="initialization")
 
     order = res.coords_history[round(Int, length(res.coords_history)*0.5)]
     x = map(x->x[2][1], enumerate(v[order]))
     y = map(x->x[2][2], enumerate(v[order]))
 
-    plot!(p, x, y, lc = :buda, subplot=2, title="middle iteration")
+    Plots.plot!(p, x, y, lc = :buda, subplot=2, title="middle iteration")
 
     order = res.top_coords
     x = map(x->x[2][1], enumerate(v[order]))
     y = map(x->x[2][2], enumerate(v[order]))
 
-    plot!(p, x, y , lc = :buda, subplot=3, size=(1200, 400), title="final")
-    plot!(p, [x[1], x[end]], [y[1], y[end]], lc = :green, ls=:dot, lw=3, subplot=3, size=(1200, 400), title="final")
+    Plots.plot!(p, x, y , lc = :buda, subplot=3, size=(1200, 400), title="final")
+    Plots.plot!(p, [x[1], x[end]], [y[1], y[end]], lc = :green, ls=:dot, lw=3, subplot=3, size=(1200, 400), title="final")
 end
 
-function plot_graph_sequence(order#=::Vector{Int}=#, v::Vector{Vector{Float64}})
+function plot_graph_sequence(#= order#=::Vector{Int}=#,  =#res::T, v::Vector{Vector{Float64}}) where T<:Result
+    order = res.top_coords
     x = map(x->x[2][1], enumerate(v[order]))
     y = map(x->x[2][2], enumerate(v[order]))
-    p = plot(x, y, lc = :buda)
-    plot!(p, [x[1], x[end]], [y[1], y[end]], lc = :green, ls=:dot, lw=3)
+    p = Plots.plot(x, y, lc = :buda)
+    Plots.plot!(p, [x[1], x[end]], [y[1], y[end]], lc = :green, ls=:dot, lw=3)
 end
-#=
+
 function parse_benchmark_file(name::String)::Tuple{Vector{Vector{Float64}}, Vector{Float64}}
     coord_history = Vector{Vector{Float64}}()
     value_history = Vector{Float64}()
@@ -495,5 +496,3 @@ function plot_hard_benchmark(j::Int, alg::String, s::Float64)
 
     return f
 end
-
-=#

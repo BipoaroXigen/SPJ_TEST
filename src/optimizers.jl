@@ -98,8 +98,8 @@ function solvink_hart(objective_function::Function, initialization::Function, se
     end
     #println("was?")
     #return Result_benchmark(f_history, p_history)
-    return f_history
-    #return Result_big(top_x.sequence, top_f, x_history, f_history, pophist, p_history)
+    #return f_history
+    return Result_big(top_x.sequence, top_f, x_history, f_history, pophist, p_history)
     #return top_x.sequence
 end
 
@@ -225,7 +225,7 @@ function solvink_hart(objective_function::MultiObjFunction, initialization::Func
             end
             i += 1
         end
-        println(population.fitness[1:5])
+        #println(population.fitness[1:5])
 
         # select pant
         parents = copy.(population.population[selection(population)])       # select parent chromosomes
@@ -286,8 +286,8 @@ function solvink_hart(objective_function::MultiObjFunction, initialization::Func
     end
 
     #return Result_real(top_x.sequence, top_f, x_history, f_history)
-    #return Result_big(x_history[end], f_history[end], x_history, f_history, pophist, p_history)
-    return Result_multi(x_history[end], vcat(f_history[end], p_history[end]), x_history, f_history, pophist, p_history)
+    return Result_big(x_history[end], f_history[end], x_history, f_history, pophist, p_history)
+    #return Result_multi(x_history[end], vcat(f_history[end], p_history[end]), x_history, f_history, pophist, p_history)
     #return Result_multi(x_history, pophist, f_history, p_history)
     #return Result_benchmark(f_history, p_history)
 end

@@ -3,7 +3,7 @@ module EO
     using Random
     using Plots
     using Statistics
-    #using CairoMakie
+    using CairoMakie
 
     include("structs.jl")
     include("utils.jl")
