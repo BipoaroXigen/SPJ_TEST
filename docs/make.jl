@@ -1,5 +1,5 @@
 using Documenter
-using EO
+#using EO
 
 makedocs(
     sitename = "SPJ_TEST",
