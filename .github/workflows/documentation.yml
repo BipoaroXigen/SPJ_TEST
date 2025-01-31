@@ -10,6 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
+    - name: Check environment variables (debug)
+      run: |
+        echo "DOCUMENTER_KEY is set"
+      if: env.DOCUMENTER_KEY != ''
+
+
     - name: Checkout the repository
       uses: actions/checkout@v2
 
@@ -27,3 +34,4 @@ jobs:
         DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
       run: |
         julia --project=docs docs/make.jl
+
