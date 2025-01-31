@@ -21,7 +21,7 @@ The notebook `zoo.ipynb` demonstrates the how the EO library can be used to solv
 ### Solving the TSP problem
 
 The notebook `TSP.ipynb` demonstrates the use and performance of the library when applied to the TSP problem.
-The solved TSP problems are from the web page: [TSP Problems](http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp/) .
+The solved TSP problems are from the web page: [TSP Problems](http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp) .
 The notebook expects the instances in a folder `TSP_problems/`.
 
 ### Multiobjective optimization
