@@ -91,7 +91,9 @@ function cr_subtour(a::T, b::T)::Vector{T} where T<:Chromosome
     return [get_real_chromosome(Int.(c1)),  get_real_chromosome(Int.(c2))]
 end
 
-"""1:1 size of input and output population"""
+"""
+1:1 size of input and output population
+"""
 function cr_subtour(p::Population)::Population
     g = []
     for i in 1:round(Int, p.size/2)

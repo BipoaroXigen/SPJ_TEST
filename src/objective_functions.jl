@@ -1,5 +1,4 @@
 ### BINARY
-
 f_onemax(x::BinaryChromosome)::Int = sum(x.sequence)
 
 function f_LABS(x::BinaryChromosome)::Float64

@@ -5,10 +5,14 @@ makedocs(
     sitename = "EO.jl",
     #modules = [EO],
     #format = Documenter.HTML(),  # Output format
-#=     pages = [
+    pages = [
         "Home" => "index.md",   # Main page
-        "Page" => "page.md"
-    ] =#
+        "Introduction and Operator functions" => "operators.md",
+        "Data types and structures" => "types.md",
+        "Simple solver examples" => "solver.md",
+        "Traveling salesman problem" => "tsp.md",
+        "Solvers for constrained optimization" => "constrains.md"
+    ]
 )
 
 #makedocs(sitename="My Documentation")

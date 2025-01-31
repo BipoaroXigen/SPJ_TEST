@@ -6,7 +6,7 @@ The library was written mainly with focus on flexibility of a solver, whose beha
 ## Installation
 
 Install the package by running `using Pkg; Pkg.add("https://github.com/BipoaroXigen/SPJ_TEST")`
-or `]add https://github.com/BipoaroXigen/SPJ_TEST` in REPL.
+, or `]add https://github.com/BipoaroXigen/SPJ_TEST` in REPL.
 
 
 ## Examples of use
