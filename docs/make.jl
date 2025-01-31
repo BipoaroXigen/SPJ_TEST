@@ -18,6 +18,5 @@ makedocs(
 deploydocs(
     repo = "https://github.com/BipoaroXigen/SPJ_TEST.git",  # Replace with your repo URL
     branch = "gh-pages",  # This is the branch where the documentation will be hosted
-    target = "build",      # The build directory where documentation is generated
-    deploy_config = Documenter.Tools.GitHubAction(deploy_key = ENV["DOCUMENTER_KEY"])
+    target = "build"      # The build directory where documentation is generated
 )
