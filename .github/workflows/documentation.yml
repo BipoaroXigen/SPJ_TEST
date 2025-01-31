@@ -23,6 +23,7 @@ jobs:
         julia --project=docs -e 'using Pkg; Pkg.instantiate()'
 
     - name: Build and deploy documentation
+      uses: peaceiris/actions-gh-pages@v3
       env:
         #DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
