@@ -21,7 +21,7 @@ The notebook `zoo.ipynb` demonstrates the how the EO library can be used to solv
 ### Solving the TSP problem
 
 The notebook `TSP.ipynb` demonstrates the use and performance of the library when applied to the TSP problem.
-The solved TSP problems are from the web page: http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp/ .
+The solved TSP problems are from the web page: [TSP Problems](http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp/) .
 The notebook expects the instances in a folder `TSP_problems/`.
 
 ### Multiobjective optimization
@@ -32,7 +32,7 @@ And the definitions of some problems are already prepared in the code.
 ### Optimization of constrained functions
 
 The notebook `constrained_optimization.ipynb` demonstrates the use and performance of the library when applied to constrained analytical optimization problems.
-The solved TSP problems are from the web page: https://cw.fel.cvut.cz/wiki/_media/courses/a0m33eoa/cviceni/2006_problem_definitions_and_evaluation_criteria_for_the_cec_2006_special_session_on_constraint_real-parameter_optimization.pdf.
+The solved TSP problems are from the web page: [Problems](https://cw.fel.cvut.cz/wiki/_media/courses/a0m33eoa/cviceni/2006_problem_definitions_and_evaluation_criteria_for_the_cec_2006_special_session_on_constraint_real-parameter_optimization.pdf).
 And the definitions of some problems are already prepared in the code.
 
 ### Algorithmic trading
