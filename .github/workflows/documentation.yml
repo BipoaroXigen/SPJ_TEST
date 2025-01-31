@@ -1,0 +1,29 @@
+name: Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+
+    - name: Set up Julia
+      uses: julia-actions/setup-julia@latest
+      with:
+        version: 1.10  # Or any version of Julia you're using
+
+    - name: Install dependencies
+      run: |
+        julia --project=docs -e 'using Pkg; Pkg.instantiate()'
+
+    - name: Build and deploy documentation
+      env:
+        DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
+      run: |
+        julia --project=docs docs/make.jl
