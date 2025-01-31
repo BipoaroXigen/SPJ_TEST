@@ -2,7 +2,7 @@ using Documenter
 using EO
 
 makedocs(
-    sitename = "EO.jl",
+    sitename = "SPJ_TEST",
     #modules = [EO],
     #format = Documenter.HTML(),  # Output format
     pages = [
