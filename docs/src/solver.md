@@ -1,6 +1,6 @@
 # Simple solver examples
 
-Here, we show, how a solver can be set up by providing it functions which define its behaviour.
+Here, we show, how a solver can be set up by providing it functions which define its behavior.
 
 All of the examples are available in the `zoo.ipynb` notebook in the `/notebooks` directory.
 
